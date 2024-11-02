@@ -1,14 +1,18 @@
 # K-of-N XOR Secret Sharing
 
-`K`-of-`N` secret sharing optimized for easy auditability of code. 
+`K`-of-`N` secret sharing optimized for easy auditability of code.
 
 `K`-of-`N` secret sharing is commonly implemented as [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing) which "is an efficient secret sharing algorithm for distributing private information (the "secret") among a group. The secret cannot be revealed unless a quorum of the group acts together to pool their knowledge. To achieve this, the secret is mathematically divided into parts (the "shares") from which the secret can be reassembled only when a sufficient number of shares are combined."
 
 However, as of this writing, [trustworthy implementations of Shamir's are lacking](https://www.reddit.com/r/cryptography/comments/1et5hy0/shamirs_secret_sharing_for_common_people/).
 
-This repo implements secret sharing simply and concisely by using only XOR and hardcoding `K` and `N`. This allows anyone with basic coding and math skills to verify the implementation themselves.
+Here, instead of using Shamir's, we use XOR for secret sharing because it is much easier for any programmer to audit the code and trust it for their own purposes.
 
-The splitting function creates a *set* of `K` shares for every combination of `K` out of `N` shareholders, where a shareholder is typically a trusted friend or location responsible for maintaining a copy of its shares. The shareholders are numbered and the sets are labelled by letters of the alphabet. Shares are printed out grouped by the intended shareholder for convenient dissemination, and labelled with the set for future reconstruction of the secret.
+Since XOR requires all shareholders to be present, and we want to account for some being unavailable, we create a whole set of XOR shares for every combination of `K` people out of `N` total shareholders (`K<N`). So, for example, any 3 out of 5 shares can recover the secret. (A shareholder is typically a trusted friend or location responsible for maintaining a copy of their share, or in this case, their shares.)
+
+The drawback is you have to give each shareholder multiple shares to keep track of instead of just one. This should be fine for many use cases because the values are small (assuming the secret is small) and not too numerous (assuming small `N`). For example, with `N=7` shareholders, the worst possible choices of `K` (3 and 4) result in 35 shares per shareholder. For `N=5` and `K` of 2 or 3, we need just 10 shares per shareholder.
+
+This implementation's splitting function creates a *set* of `K` shares for every combination of `K` out of `N` shareholders. The shareholders are numbered and the sets are labelled by letters of the alphabet. Shares are printed out grouped by the intended shareholder for convenient dissemination, and labelled with the set for future reconstruction of the secret.
 
 Thanks [sandassure](https://www.reddit.com/user/sandassure/) (and [Cryptizard](https://www.reddit.com/user/Cryptizard/)) for [the idea](https://www.reddit.com/r/cryptography/comments/1et5hy0/comment/lm3sz9j/), and thanks ChatGPT for the implementation (but not for suggesting a deterministic random function...lol) !
 
