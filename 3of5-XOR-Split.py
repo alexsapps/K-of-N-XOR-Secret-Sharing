@@ -6,7 +6,7 @@ def create_shares(secret, num_shares=3):
     secret_bytes = secret.encode('utf-8')
     share1 = secrets.token_bytes(len(secret_bytes))
     share2 = secrets.token_bytes(len(secret_bytes))
-    share3 = bytes([s ^ b1 ^ b2 for s, b1, b2 in zip(secret_bytes, share1, share2)])
+    share3 = bytes([s ^ b1 ^ b2 for s, b1, b2 in zip(secret_bytes, share1, share2)]) # Ensures s1⊕s2⊕s3 = secret
     return [share1.hex(), share2.hex(), share3.hex()]
 
 # Combinations of shareholders (1-5) choosing 3 at a time
