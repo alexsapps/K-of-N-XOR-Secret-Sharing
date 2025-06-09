@@ -1,15 +1,11 @@
 import secrets
 import itertools
 
-# Function to generate random byte string for XOR sharing
-def random_bytes(length):
-    return bytes(secrets.randbelow(256) for _ in range(length))
-
 # Function to create XOR shares from a secret
 def create_shares(secret, num_shares=3):
     secret_bytes = secret.encode('utf-8')
-    share1 = random_bytes(len(secret_bytes))
-    share2 = random_bytes(len(secret_bytes))
+    share1 = secrets.token_bytes(len(secret_bytes))
+    share2 = secrets.token_bytes(len(secret_bytes))
     share3 = bytes([s ^ b1 ^ b2 for s, b1, b2 in zip(secret_bytes, share1, share2)])
     return [share1.hex(), share2.hex(), share3.hex()]
 
