@@ -24,12 +24,12 @@ Be sure to [install Python](https://www.google.com/search?q=install+python) if y
 
 ### Splitting
 
-First, identify `N` stakeholders (e.g. trusted friends or places) and then run the splitting code to obtain codes for each of them:
+First, identify `N` shareholders (e.g. trusted friends or places) and then run the splitting code to obtain codes for each of them:
 
 ```
 $ python3 ./3of5-XOR-Split.py
 Enter the secret to be split: 🔥Secret🔥
-Stakeholder 1:
+Shareholder 1:
   Set A: 565625aa68fb4c5d293ef46b6982
   Set B: 760c39261e21ba92bd8da198191d
   Set C: f7bd089ab72d68ad5162fefd1a75
@@ -37,7 +37,7 @@ Stakeholder 1:
   Set E: 89491092e5bbe2fcf14f18cd28d8
   Set F: 51508f6b3bed424c289d154d12a8
 
-Stakeholder 2:
+Shareholder 2:
   Set A: 238dfe8478365cad4e9f54f0fd79
   Set B: 9e5f2002bf221f850fef22214a5e
   Set C: 286d51711870a5128c629e271743
@@ -45,7 +45,7 @@ Stakeholder 2:
   Set H: 60c04a94d4e2fbfebbe5135346d4
   Set I: 9a1384ba0d2ebbb1e694a26006f4
 
-Stakeholder 3:
+Shareholder 3:
   Set A: 85444f8b43a8738202d55004005e
   Set D: d8554e969b4e75d80b445b3259a9
   Set E: 254db616166434752e03cd513486
@@ -53,7 +53,7 @@ Stakeholder 3:
   Set H: 707d73a6cd77c127f6994bf5c37c
   Set J: 05fc2df450836f1e4a1997bfa212
 
-Stakeholder 4:
+Shareholder 4:
   Set B: 18cc8d81f266c665d7167326c7e6
   Set D: e1bf297319f89c0c90e884982e72
   Set F: 17f096c5fa229416b03e48100793
@@ -61,7 +61,7 @@ Stakeholder 4:
   Set I: 2df13a4c3e0aeb3050e5038739e3
   Set J: 7d62d0581baf4702f669fbce0652
 
-Stakeholder 5:
+Shareholder 5:
   Set C: 2f4fcd4efc38aecdb87490459993
   Set E: 5c9b3221a0bab5fbba38250388fb
   Set F: b63f8d0b92aab528fdd7adc2819e
@@ -72,11 +72,11 @@ Stakeholder 5:
 $
 ```
 
-Then disseminate the codes. For example, Stakeholder 1 might be your lockbox at the bank, so you print out the shares and deposit them there. Stakeholder 2 might be your friend, and you might message them using a [privacy focused messaging app](https://www.google.com/search?q=privacy+focused+messaging+app) and tell them "Hey friend, please keep these codes safe in your password manager. I might ask you to give them back to me later, but please make sure it's really me before doing so." 
+Then disseminate the codes. For example, Shareholder 1 might be your lockbox at the bank, so you print out the shares and deposit them there. Shareholder 2 might be your friend, and you might message them using a [privacy focused messaging app](https://www.google.com/search?q=privacy+focused+messaging+app) and tell them "Hey friend, please keep these codes safe in your password manager. I might ask you to give them back to me later, but please make sure it's really me before doing so." 
 
 ### Combining
 
-Enter any 3 shares from the same set. To do this, you might obtain the full list of shares from each of 3 shareholders, and then identify the letter that occurs in each of them and use the shares for that set. For example, stakeholders #2, #3 and #5 all have shares for set "H".
+Enter any 3 shares from the same set. To do this, you might obtain the full list of shares from each of 3 shareholders, and then identify the letter that occurs in each of them and use the shares for that set. For example, shareholders #2, #3 and #5 all have shares for set "H".
 
 ```
 $ python3 ./3ofN-XOR-combine.py 
@@ -95,15 +95,15 @@ Write a python script that prompts the user for a unicode secret and creates 3 s
 
 Do this for every combination of 3 out of 5 known shareholders, #1-#5. there are 10 such combinations, so there should be 10 sets. Let's identify sets by A-J.
 
-At the end, print all shares across sets organized by stakeholder:
+At the end, print all shares across sets organized by shareholder:
 
-Stakeholder 1:
+Shareholder 1:
 Set A:  a048d...
 Set B: ...
 Set C: ...
 ...
 
-Stakeholder 2:
+Shareholder 2:
 ...
 
 Please be sure to use a secure random function.

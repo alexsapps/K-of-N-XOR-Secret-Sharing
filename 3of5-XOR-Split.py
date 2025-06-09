@@ -31,7 +31,7 @@ for set_label, combination in zip(set_labels, shareholder_combinations):
 
 # Print the results organized by shareholder
 for shareholder, sets in shareholder_shares.items():
-    print(f"Stakeholder {shareholder}:")
+    print(f"Shareholder {shareholder}:")
     for set_label, share in sets.items():
         if share:
             print(f"  Set {set_label}: {share}")
