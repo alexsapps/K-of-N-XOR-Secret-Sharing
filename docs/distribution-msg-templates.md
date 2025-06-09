@@ -5,8 +5,7 @@ Here are some template messages you may use to facilitate coordination with shar
 ## Invitation
 
 Hi <b>&lt;shareholder&gt;</b>, could I give you a password of sorts that you can give back to me later, in case I forget it?
-I'm asking this to people I trust because data is client-encrypted, so there's no way to recover my data if I
-forget the password.
+I'm asking this to people I trust because my data is client-encrypted, so I have no way to recover it if I lose the secret used to encrypt it.
 
 This would require a password manager that has a multi-line text field such as a "notes" field--not just username and
 password fields--in order to securely store several lines of secret data I would provide you and instructions for
@@ -23,6 +22,8 @@ trying to impersonate me (such as a scammer or undercover police), and then I'd 
 back. If I make up some excuse why I can't video call, then I'd trust you to refuse to give me anything, as it might not
 be me asking at all. Also, it's highly unlikely, but if authorities demanded this piece of information, I'd need you to
 insist on speaking with a lawyer first.
+
+For optional details on this process, check out https://github.com/alexsapps/K-of-N-XOR-Secret-Sharing/
 
 Please let me know if you'd be willing to help. Then, once I confirm everyone, I'll send out the secret shares.
 
@@ -43,16 +44,21 @@ contact <b>&lt;legal or organizational resource&gt;</b> for assistance. Even if
 incapacitated or unavailable, do not disclose to others.
 >
 > Secret data:
-> <b>&lt;secret&gt;</b>
+>
+> <b>&lt;secret: six codes for this shareholder, each labeled with a letter&gt;</b>
 >
 > Description: <b>&lt;description of secret&gt;</b>
 >
 > Date: <b>&lt;today's date&gt;</b>
 >
-> Instructions for the secret owner to reconstruct the secret: collect <b>&lt;K&gt;</b> shares with matching labels and
-apply the algorithm to combine:
+> Instructions for the secret owner to reconstruct the secret:
+>
+> Collect <b>&lt;K&gt;</b> shares with matching labels and apply the algorithm to combine:
 >
 > https://github.com/alexsapps/K-of-N-XOR-Secret-Sharing/blob/f2df5d257e8bf25c72dac9cd90d993ae76baac29/3ofN-XOR-combine.py
 >
 > If the code above is unavailable, rewrite it as follows: decode the hexadecimal-encoded strings into byte sequences,
 compute the bitwise XOR of corresponding bytes, and decode the resulting byte sequence as a UTF-8 string.
+>
+> E.g. in Python:
+> `bytes([b1 ^ b2 ^ b3 for b1, b2, b3 in zip(bytes.fromhex("<share 1>"), bytes.fromhex("<share 2>"), bytes.fromhex("<share 3>"))]).decode('utf-8')`
