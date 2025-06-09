@@ -1,3 +1,5 @@
+# Share Distribution Message Templates
+
 Here are some template messages you may use to facilitate coordination with shareholders.
 
 ## Invitation
@@ -47,7 +49,10 @@ incapacitated or unavailable, do not disclose to others.
 >
 > Date: <b>&lt;today's date&gt;</b>
 >
-> Instructions for the secret owner to reconstruct the secret: collect <b>&lt;K&gt;</b> shares with matching labels;
-decode the hexadecimal-encoded strings into byte sequences, compute the bitwise XOR of corresponding bytes, and decode
-the resulting byte sequence as a UTF-8 string. Example code:
-https://github.com/alexsapps/K-of-N-XOR-Secret-Sharing/blob/f2df5d257e8bf25c72dac9cd90d993ae76baac29/3ofN-XOR-combine.py
+> Instructions for the secret owner to reconstruct the secret: collect <b>&lt;K&gt;</b> shares with matching labels and
+apply the algorithm to combine:
+>
+> https://github.com/alexsapps/K-of-N-XOR-Secret-Sharing/blob/f2df5d257e8bf25c72dac9cd90d993ae76baac29/3ofN-XOR-combine.py
+>
+> If the code above is unavailable, rewrite it as follows: decode the hexadecimal-encoded strings into byte sequences,
+compute the bitwise XOR of corresponding bytes, and decode the resulting byte sequence as a UTF-8 string.
