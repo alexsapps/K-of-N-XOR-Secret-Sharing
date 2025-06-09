@@ -20,7 +20,8 @@ Currently there is support for `K`=3; `N`=5 only.
 
 ## Usage
 
-Be sure to [install Python](https://www.google.com/search?q=install+python) if you don't already have it, then download the Python files in this repo and follow the below example.
+Be sure to [install Python](https://www.google.com/search?q=install+python) if you don't already have it, then download the Python files in this repo and follow the below example. Consider using the template messages in [distribution.md](distribution.md) to
+facilitate coordination with shareholders.
 
 ### Splitting
 
@@ -121,3 +122,6 @@ Of course you should run the code only on a device that you trust.
 Consider how you will keep the shares secret. Human shareholders are susceptible to social engineering and phishing.
 
 Note that even individual shares reveal the length of your secret.
+
+You may wish to keep the set of shareholders secret. Consider how you will guard this secret without foretting who the
+shareholders are.
