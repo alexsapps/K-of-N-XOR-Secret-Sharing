@@ -116,15 +116,14 @@ sure to test any generated code before relying on it!
 
 ## Privacy and security considerations
 
-It is recommended to download these python files onto your computer and verify their contents yourself before running. You'll have to trust the Python CLI and Python Standard Library of course, but this project contains no 3rd party dependencies and does not require running any build scripts. If concerned about trojan source attacks, consider asking Chat GPT to regenerate the code from the same prompts used here (see ChatGPT link above).
-
-Consider saving a backup of the code so you won't lose the ability to combine your secret in case this code is altered in a backward-incompatible way or removed or made unavailable from its publicly hosted location.
-
-Of course you should run the code only on a device that you trust.
-
-Consider how you will keep the shares secret. Human shareholders are susceptible to social engineering and phishing.
-
-Note that even individual shares reveal the length of your secret.
-
-You may wish to keep the set of shareholders secret. Consider how you will guard this secret without foretting who the
+* It is recommended to download these python files onto your computer and verify their contents yourself before running.
+You'll have to trust the Python CLI and Python Standard Library of course, but this project contains no 3rd party
+dependencies and does not require running any build scripts. If concerned about trojan source attacks, consider asking
+Chat GPT to regenerate the code from the same prompts used here (see ChatGPT link above).
+* Consider saving a backup of the code so you won't lose the ability to combine your secret in case this code is altered
+in a backward-incompatible way or removed or made unavailable from its publicly hosted location.
+* Of course you should run the code only on a device that you trust.
+* Consider how you will keep the shares secret. Human shareholders are susceptible to social engineering and phishing.
+* Note that even individual shares reveal the length of your secret.
+* You may wish to keep the set of shareholders secret. Consider how you will guard this secret without foretting who the
 shareholders are.
